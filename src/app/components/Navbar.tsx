@@ -19,7 +19,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="fixed top-0 z-10 flex w-screen items-center justify-between px-5 py-5 sm:px-10 sm:py-8">
+    <header className="lg:fixed top-0 z-10 flex w-screen items-center justify-between px-5 py-5 sm:px-10 sm:py-8">
       <Image
         id="logo"
         src={logo}
