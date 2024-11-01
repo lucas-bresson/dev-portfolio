@@ -2,20 +2,111 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .hamburger {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s;
+    position: relative;
+  }
+
+  .hamburger-top,
+  .hamburger-middle,
+  .hamburger-bottom {
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    top: 0;
+    left: 0;
+    transform: rotate(0);
+    transition: all 0.5s;
+  }
+
+  .hamburger-middle {
+    transform: translateY(7px);
+  }
+
+  .hamburger-bottom {
+    transform: translateY(14px);
+  }
+
+  .open {
+    transform: rotate(90deg);
+  }
+
+  .open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+  }
+  .open .hamburger-middle {
+    display: none;
+  }
+  .open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translateX(-6px);
+  }
+
+  .loopstudios-button {
+    @apply my-0 border-2 border-black px-10 py-2 font-bold uppercase tracking-tripleWide hover:bg-black hover:text-white;
+  }
+
+  .loopstudios-items-container {
+    @apply flex w-full flex-col justify-between space-y-6 text-2xl uppercase text-white md:flex-row md:space-x-8 md:space-y-0;
+  }
+
+  .loopstudios-item {
+    @apply relative overflow-hidden md:w-1/4;
+  }
+
+  .loopstudios-item-gradient {
+    @apply absolute bottom-0 left-0 right-0 top-0 bg-gradient-to-b from-transparent to-gray-900 group-hover:from-gray-50 group-hover:to-white group-hover:opacity-70;
+  }
+
+  .loopstudios-h5 {
+    @apply absolute bottom-4 w-52 px-6 duration-200 group-hover:scale-110 group-hover:text-black md:bottom-8 md:px-10;
+  }
+
+  .spotlight-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    background: radial-gradient(
+      350px at var(--x) var(--y),
+      rgba(29, 78, 216, 0.25),
+      transparent 100%
+    );
+    transition: background-position 0.1s ease;
+  }
+
+  .notification-mark {
+    position: relative;
+    background: #00bb61;
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+  }
+
+  .notification-mark span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: inherit;
+    opacity: 0.6;
+    animation: pulseAnimate 3s ease-out infinite;
+  }
+
+  @keyframes pulseAnimate {
+    100% {
+      opacity: 0;
+      transform: scale(3);
+    }
+  }
 }
