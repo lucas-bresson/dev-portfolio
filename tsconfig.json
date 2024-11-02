@@ -24,9 +24,10 @@
       "@images/*": ["public/assets/images/*"],
       "@components/*": ["src/app/components/*"],
       "@constants/*": ["src/app/constants/*"],
+      "@utils/*": ["src/app/utils/*"],
       "@fonts": ["src/app/fonts"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/utils/analyics.js"],
   "exclude": ["node_modules"]
 }

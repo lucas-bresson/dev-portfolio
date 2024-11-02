@@ -1,5 +1,6 @@
 'use client';
 
+import { sendGAEvent } from '@/utils/analytics';
 import { useGSAP } from '@gsap/react';
 import cvIcon from '@images/cv.svg';
 import githubIcon from '@images/github.svg';
@@ -33,6 +34,13 @@ const Navbar = () => {
               href="https://github.com/lucas-bresson"
               target="_blank"
               className="flex cursor-pointer items-center gap-2 text-sm hover:text-teal-400"
+              onClick={() =>
+                sendGAEvent({
+                  action: 'buttonClicked',
+                  category: 'Navbar',
+                  label: 'Github',
+                })
+              }
             >
               <Image
                 id="github-icon"
@@ -48,6 +56,13 @@ const Navbar = () => {
               href="https://www.linkedin.com/in/lucas-bresson/"
               target="_blank"
               className="flex cursor-pointer items-center gap-2 text-sm hover:text-teal-400"
+              onClick={() =>
+                sendGAEvent({
+                  action: 'buttonClicked',
+                  category: 'Navbar',
+                  label: 'LinkedIn',
+                })
+              }
             >
               <Image
                 id="linkedIn-icon"
@@ -63,6 +78,13 @@ const Navbar = () => {
               href="/assets/CV-lucas-bresson.pdf"
               className="flex cursor-pointer items-center gap-2 text-sm hover:text-teal-400"
               target="_blank"
+              onClick={() =>
+                sendGAEvent({
+                  action: 'buttonClicked',
+                  category: 'Navbar',
+                  label: 'CV',
+                })
+              }
             >
               <Image id="cv-icon" src={cvIcon} alt="CV" className="h-5 w-5" />
               <span className="hidden sm:block">CV</span>
@@ -72,6 +94,13 @@ const Navbar = () => {
             <a
               href="https://www.linkedin.com/in/lucas-bresson/"
               target="_blank"
+              onClick={() =>
+                sendGAEvent({
+                  action: 'buttonClicked',
+                  category: 'Navbar',
+                  label: 'Contact',
+                })
+              }
             >
               <button className="rounded-sm border-2 border-teal-400 px-4 py-2 text-sm font-medium text-teal-400 duration-500 hover:bg-teal-400 hover:text-teal-900">
                 Contact

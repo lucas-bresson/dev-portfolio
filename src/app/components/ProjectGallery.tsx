@@ -1,6 +1,7 @@
 'use client';
 
 import { PROJECTS } from '@/constants';
+import { sendGAEvent } from '@/utils/analytics';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
@@ -56,7 +57,17 @@ const ProjectGallery = () => {
         className="relative mx-5 grid max-w-screen-2xl grid-cols-1 justify-items-center gap-16 opacity-0 lg:mx-auto lg:grid-cols-4 lg:gap-8"
       >
         {PROJECTS.map((project) => (
-          <Link key={project.id} href={project.href}>
+          <Link
+            key={project.id}
+            href={project.href}
+            onClick={() =>
+              sendGAEvent({
+                action: 'buttonClicked',
+                category: 'Project',
+                label: project.id,
+              })
+            }
+          >
             <Image
               src={project.image}
               alt={`Project ${project.id}`}

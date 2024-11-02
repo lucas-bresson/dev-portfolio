@@ -2,6 +2,7 @@
 
 import { TECHNOLOGIES } from '@/constants';
 import { useGSAP } from '@gsap/react';
+import { sendGAEvent } from '@utils/analytics';
 import gsap from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import Image from 'next/image';
@@ -48,6 +49,12 @@ const Hero = () => {
         ease: 'power2.inOut', // Smooth easing for a more natural scroll
       });
     }
+
+    sendGAEvent({
+      action: 'buttonClicked',
+      category: 'Hero',
+      label: 'SeeMyWork',
+    });
   };
 
   return (
@@ -92,7 +99,17 @@ const Hero = () => {
         </div>
       </div>
       <div className="mt-32 flex w-full flex-col items-center justify-center gap-8">
-        <a href="https://www.linkedin.com/in/lucas-bresson/" target="_blank">
+        <a
+          href="https://www.linkedin.com/in/lucas-bresson/"
+          target="_blank"
+          onClick={() =>
+            sendGAEvent({
+              action: 'buttonClicked',
+              category: 'Hero',
+              label: 'ContactMe',
+            })
+          }
+        >
           <button
             id="contact-cta"
             className="rounded-sm border border-teal-400 px-12 py-3 font-medium text-teal-400 opacity-0 duration-500 hover:bg-teal-400 hover:text-teal-900"
