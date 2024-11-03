@@ -14,7 +14,7 @@ const PlayerCard = ({
       />
     )}
     <div
-      className={`flex min-w-24 flex-col items-center justify-between rounded-lg p-3 shadow-lg sm:flex-row ${active ? 'bg-amber-500 text-white' : 'bg-slate-300 text-darkBlue'}`}
+      className={`text-sm sm:text-base flex flex-col items-center justify-between rounded-lg p-1 sm:p-3 lg:p-5 shadow-lg sm:flex-row ${active ? 'bg-amber-500 text-white' : 'bg-slate-300 text-darkBlue'}`}
     >
       <div>{`Player ${number}`}</div>
       <div className="text-xl">{score}</div>
@@ -41,7 +41,7 @@ export default function GameFooter({
   moves?: number;
 }) {
   return (
-    <section className="flex items-center justify-center space-x-6 pb-16 font-bold text-slate-500">
+    <section className="flex items-center justify-center gap-4 lg:gap-6 pb-16 font-bold text-slate-500">
       {players === 1 ? (
         <>
           <div className="flex w-48 items-center justify-between rounded-lg bg-slate-300 p-3 shadow-lg lg:w-64">

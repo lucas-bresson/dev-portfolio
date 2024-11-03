@@ -100,7 +100,7 @@ export default function Page() {
       {isSelectingSettings ? (
         <Settings setSettings={setSettings} />
       ) : (
-        <div className="flex h-screen flex-col justify-between px-10 lg:px-20">
+        <div className="px-5 flex h-screen flex-col justify-between sm:px-10 lg:px-20">
           <GameHeader theme={theme} restart={restart} newGame={newGame} />
           <GameBoard
             array={array}
