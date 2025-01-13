@@ -16,7 +16,8 @@ const Navbar = () => {
     gsap.to('#github', { opacity: 1, y: 0, delay: 0.2 });
     gsap.to('#linkedIn', { opacity: 1, y: 0, delay: 0.3 });
     gsap.to('#cv', { opacity: 1, y: 0, delay: 0.4 });
-    gsap.to('#contact', { opacity: 1, y: 0, delay: 0.5 });
+    gsap.to('#resume', { opacity: 1, y: 0, delay: 0.5 });
+    gsap.to('#contact', { opacity: 1, y: 0, delay: 0.6 });
   }, []);
 
   return (
@@ -88,6 +89,23 @@ const Navbar = () => {
             >
               <Image id="cv-icon" src={cvIcon} alt="CV" className="h-5 w-5" />
               <span className="hidden sm:block">CV</span>
+            </Link>
+          </li>
+          <li id="resume" className="-translate-y-10 opacity-0">
+            <Link
+              href="/assets/Resume-lucas-bresson.pdf"
+              className="flex cursor-pointer items-center gap-2 text-sm hover:text-teal-400"
+              target="_blank"
+              onClick={() =>
+                sendGAEvent({
+                  action: 'buttonClicked',
+                  category: 'Navbar',
+                  label: 'Resume',
+                })
+              }
+            >
+              <Image id="cv-icon" src={cvIcon} alt="Resume" className="h-5 w-5" />
+              <span className="hidden sm:block">Resume</span>
             </Link>
           </li>
           <li id="contact" className="-translate-y-10 opacity-0">
