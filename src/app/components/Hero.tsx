@@ -86,7 +86,7 @@ const Hero = () => {
             {TECHNOLOGIES.map(({ icon, name }) => (
               <span
                 key={name}
-                className="flex cursor-default gap-2 rounded-lg bg-slate-800 p-2 hover:bg-slate-700"
+                className="flex cursor-default gap-1 rounded-lg bg-slate-800 p-2 hover:bg-slate-700"
               >
                 <Image src={icon} alt="name" className="h-6 w-6" />
                 {name}

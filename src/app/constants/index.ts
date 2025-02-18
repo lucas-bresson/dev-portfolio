@@ -24,6 +24,8 @@ import typescript from '@images/technologies/typescript.svg';
 import vercel from '@images/technologies/vercel.svg';
 import vite from '@images/technologies/vite.svg';
 import webpack from '@images/technologies/webpack.svg';
+import docker from '@images/technologies/docker.svg';
+import reactNative from '@images/technologies/react-native.svg';
 
 import bookmark from '@images/home/bookmark.webp';
 import loopstudios from '@images/home/loopstudios.webp';
@@ -38,6 +40,7 @@ export const TECHNOLOGIES = [
   { name: 'HTML', icon: html },
   { name: 'CSS', icon: css },
   { name: 'JavaScript', icon: javascript },
+  { name: 'React Native', icon: reactNative },
   { name: 'Gatsby', icon: gatsby },
   { name: 'Jest', icon: jest },
   { name: 'Cypress', icon: cypress },
@@ -50,6 +53,7 @@ export const TECHNOLOGIES = [
   { name: 'Firebase', icon: firebase },
   { name: 'Redux', icon: redux },
   { name: 'GraphQL', icon: graphql },
+  { name: 'Docker', icon: docker },
   { name: 'Vite', icon: vite },
   { name: 'Webpack', icon: webpack },
   { name: 'git', icon: git },
