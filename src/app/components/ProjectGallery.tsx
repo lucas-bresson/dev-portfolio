@@ -49,7 +49,7 @@ const ProjectGallery = () => {
           Projects
         </h2>
         <p className="mt-4 leading-normal">
-          A selection of projects I have recenly worked on.
+          A selection of projects I have recently worked on.
         </p>
       </div>
       <div
